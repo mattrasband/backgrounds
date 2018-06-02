@@ -2,6 +2,10 @@
 
 A simple CLI based background/wallpaper downloader.
 
+Sources supported:
+
+* Chromecast
+
 ## Usage
 
 ```bash
