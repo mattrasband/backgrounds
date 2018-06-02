@@ -41,7 +41,7 @@ class Background:
         """
         if not to.exists():
             logger.debug('The author directory does not exist, creating...')
-            to.mkdir()
+            to.mkdir(parents=True)
 
         dl_to = to / f'{self.author}-{self.title}'
         if dl_to.exists():
@@ -54,6 +54,7 @@ class Background:
                             self.href, resp.getcode())
                 return
 
+            logger.debug('Downloading new background: %s', dl_to.absolute())
             with open(dl_to, 'wb') as f:
                 f.write(resp.read())
 
